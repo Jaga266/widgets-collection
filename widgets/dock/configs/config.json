@@ -1,16 +1,6 @@
 {
   "position": "bottom",
   "orientation": "horizontal",
-  "items": [
-    "Zen",
-    "YouTube Music",
-    "Obsidian",
-    "Telegram",
-    "ChatGPT",
-    "YouTube",
-    "Thunderbird",
-    "Vide"
-  ],
   "iconSize": 48,
   "alwaysVisible": false,
   "showIconsBackground": true,
