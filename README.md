@@ -3,31 +3,43 @@
 
 <div align=center>
   
-A customizable collection of QML widgets built with the [quickshell](https://quickshell.outfoxxed.me/) environment.
+A customizable collection of widgets built with the [quickshell](https://quickshell.outfoxxed.me/) environment.
 
 </div>
 
 https://github.com/user-attachments/assets/8cd1d3f1-74a7-4dd4-baf0-7fa908daabce
 
+## Table of Contents
+
+- [Installation](#installation)
+  - [Manual Installation](#manual-installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+  - [Appearance Configuration](#appearance-configuration)
+  - [Widgets Configuration](#widgets-configuration)
+- [Widgets](#widgets)
+  - [Dock](#dock)
+- [Future Plans](#future-plans)
+
 ## Installation
 
-### Manual installation
+### Manual Installation
 
 1. **Dependencies:**  
-   Install core dependency - [quickshell](https://quickshell.outfoxxed.me/docs/guide/install-setup/)
+   Install the core dependency - [quickshell](https://quickshell.outfoxxed.me/docs/guide/install-setup/)
 
-   > Some widgets may require additional dependencies for extra features. Read the widget overview before using it
+   > Some widgets may require additional dependencies for extra features. Read the widget overview before using them.
 
-3. **Clone the Repository:**
+2. **Clone the Repository:**
    ```sh
    $ git clone https://github.com/crawraps/widgets-collection $HOME/.config/quickshell/cwc
    ```
 
-   > if $XDG_CONFIG_HOME is not defined, use $HOME/.config instead
+   > If $XDG_CONFIG_HOME is not defined, use $HOME/.config instead.
 
 ## Usage
 
-1. Select widgets you want to use by editing `shell.qml` file. Example:
+1. Select the widgets you want to use by editing the `shell.qml` file. Example:
 ```qml
 // shell.qml
 
@@ -38,15 +50,15 @@ ShellRoot {
 }
 ```
 
-> Each widgets creates an instance for each monitor by default. You can configure this behaviour, read configuration for details.
+> Each widget creates an instance for each monitor by default. You can configure this behavior—read the configuration section for details.
 
-2. Start shell by typing `$ quickshell -c cwc` or `$ quickshell -dc cwc` to run as daemon.
-3. *\*optional\** Add the command above to system startup. For example in hyprland add `exec-once=quickshell -dc cwc` to your hyprland.conf
-4. *\*optional\** Create an alias for better usability. For example in zsh add `alias -- cwc='quickshell -c cwc'` to your .zshrc
+2. Start the shell by typing `$ quickshell -c cwc` or `$ quickshell -dc cwc` to run as a daemon.
+3. **\*Optional\*** Add the command above to system startup. For example, in Hyprland, add `exec-once=quickshell -dc cwc` to your hyprland.conf.
+4. **\*Optional\*** Create an alias for better usability. For example, in zsh, add `alias -- cwc='quickshell -c cwc'` to your .zshrc.
 
 ## Configuration
 
-You can configure widgets and appearance by changing `.json` files. Every config file supports hot-reload.
+You can configure widgets and their appearance by modifying `.json` files. Every config file supports hot-reload.
 
 ### Appearance Configuration
 
@@ -69,11 +81,11 @@ Global appearance (colors, fonts, spacing, etc.) is managed via `appearance.json
 }
 ```
 
-### Widgets configuration
+### Widgets Configuration
 
-Each widget can have several widget-specific configuration files, each one is located in `widgets/[widget-name]/configs/` directory.
+Each widget can have several widget-specific configuration files, each located in the `widgets/[widget-name]/configs/` directory.
 
-While selecting a widget to use, you can provide several common options:
+When selecting a widget to use, you can provide several common options:
 
 ```qml
 // shell.qml
@@ -87,9 +99,9 @@ While selecting a widget to use, you can provide several common options:
   }
 ```
 
-- **configName:** name of a `.json` configuration file. Default: `"config"` In this example it'll be `widgets/dock/configs/power-menu.json`
-- **monitorInds:** list of screens ids where widget should be displayed. Default: every screen
-- **screens:** list of screens where widget should be displayed. When this option is presented, **monitorInds** option will be ignored. Use this for more precise configuration. In the example the dock will be displayed on the rightmost screen.
+- **configName:** Name of a `.json` configuration file. Default: `"config"`. In this example, it would be `widgets/dock/configs/power-menu.json`.
+- **monitorInds:** List of screen IDs where the widget should be displayed. Default: every screen.
+- **screens:** List of screens where the widget should be displayed. When this option is present, the **monitorInds** option will be ignored. Use this for more precise configuration. In the example above, the widget will be displayed on the rightmost screen.
 
 ## Widgets
 
@@ -115,7 +127,7 @@ Each dock can be configured with a JSON file (e.g., `configs/applications.json`)
   "items": [
     "Zen",
     "Obsidian",
-    "Thunderbird",
+    "Thunderbird"
   ],
   "iconSize": 48,
   "alwaysVisible": false,
@@ -127,19 +139,19 @@ Each dock can be configured with a JSON file (e.g., `configs/applications.json`)
 }
 ```
 
-- **position:** `"top"`, `"bottom"`, `"left"`, `"right"` - where to put a dock
-- **orientation:** `"horizontal"` or `"vertical"` - how to orient a dock
-- **margins:** `{ "bottom": number, "top": number, "right": number, "left": number }` - spacing from screen edges. By default a dock will be in the center of **position** edge
-- **items:** list of `.desktop` files app names to show; if not defined, all desktop applications will be listed.
-- **iconSize:** size of an icon in pixels 
-- **alwaysVisible:** if false, dock expands/collapses on hover
-- **showIconsBackground:** whether to show background for icons
-- **showTooltips:** whether to display tooltips
-- **falloff:** amount of items to be affected by hover animation
-- **scaleFactor:** controls item's hover scaling animation strength
-- **damp:** controls nearby items' hover scaling animation strength
+- **position:** `"top"`, `"bottom"`, `"left"`, `"right"` - where to position the dock
+- **orientation:** `"horizontal"` or `"vertical"` - how to orient the dock
+- **margins:** `{ "bottom": number, "top": number, "right": number, "left": number }` - spacing from screen edges. By default, the dock will be centered on the specified **position** edge
+- **items:** List of `.desktop` file app names to show; if not defined, all desktop applications will be listed
+- **iconSize:** Size of an icon in pixels 
+- **alwaysVisible:** If false, the dock expands/collapses on hover
+- **showIconsBackground:** Whether to show background for icons
+- **showTooltips:** Whether to display tooltips
+- **falloff:** Number of items to be affected by hover animation
+- **scaleFactor:** Controls item's hover scaling animation strength
+- **damp:** Controls nearby items' hover scaling animation strength
 
-## Future
+## Future Plans
 
 Here's a list of widgets I want to create:
 
