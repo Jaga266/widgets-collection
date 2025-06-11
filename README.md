@@ -83,7 +83,7 @@ Global appearance (colors, fonts, spacing, etc.) is managed via `appearance.json
 
 ### Widgets Configuration
 
-Each widget can have several widget-specific configuration files, each located in the `widgets/[widget-name]/configs/` directory.
+Each widget can have several widget-specific `.json` configuration files, each located in the `widgets/[widget-name]/configs/` directory.
 
 When selecting a widget to use, you can provide several common options:
 
@@ -93,15 +93,15 @@ When selecting a widget to use, you can provide several common options:
 ...
 
   Dock {
-    configName: "power-menu"
-    monitorInds: [0]
+    name: "power-menu"
+    screenIds: [0]
     screens: [Quickshell.screens.reduce((acc, screen) => screen.x > acc.x ? screen : acc, { x: -Infinity })]
   }
 ```
 
-- **configName:** Name of a `.json` configuration file. Default: `"config"`. In this example, it would be `widgets/dock/configs/power-menu.json`.
-- **monitorInds:** List of screen IDs where the widget should be displayed. Default: every screen.
-- **screens:** List of screens where the widget should be displayed. When this option is present, the **monitorInds** option will be ignored. Use this for more precise configuration. In the example above, the widget will be displayed on the rightmost screen.
+- **name:** Name of a `.json` configuration file. Default value is `"default"`. In this example, it would be `widgets/dock/configs/power-menu.json`.
+- **screenIds:** List of screen IDs where the widget should be displayed. Default: every screen.
+- **screens:** List of screens where the widget should be displayed. When this option is present, the **screenIds** option will be ignored. Use this for more precise configuration: in the example above, the widget will be displayed on the rightmost screen.
 
 ## Widgets
 

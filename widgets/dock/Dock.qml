@@ -9,18 +9,18 @@ import "root:/utils"
 import "root:/components"
 
 Scope {
-  property string configName: "config"
+  property string name: "default"
 
   Config {
     id: config
-    path: Qt.resolvedUrl(`./configs/${configName}.json`)
+    path: Qt.resolvedUrl(`./configs/${name}.json`)
   }
 
-  property list<int> monitorInds: Quickshell.screens.map((_, i) => i)
-  property list<ShellScreen> screens: Quickshell.screens.filter((_, i) => monitorInds.includes(i))
+  property list<int> screenIds: Quickshell.screens.map((_, i) => i)
+  property list<ShellScreen> screens: Quickshell.screens.filter((_, i) => screenIds.includes(i))
 
   IpcHandler {
-    target: `dock-${configName}`
+    target: `dock_${name}`
     function expand(monitor: int): void {
       const instance = variants.instances[monitor]
       instance.expand(instance.apps.length / 2)
