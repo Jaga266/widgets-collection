@@ -85,7 +85,7 @@ Rectangle {
         Image {
           width: parent.width
           height: width
-          source: modelData.icon
+          source: Quickshell.iconPath(modelData.icon)
 
           transform: Scale {
             origin.x: config.data.iconSize / 2
