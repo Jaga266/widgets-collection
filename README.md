@@ -19,6 +19,7 @@ https://github.com/user-attachments/assets/8cd1d3f1-74a7-4dd4-baf0-7fa908daabce
   - [Widgets Configuration](#widgets-configuration)
 - [Widgets](#widgets)
   - [Dock](#dock)
+- [Contribution](#contribution)
 - [Future Plans](#future-plans)
 
 ## Installation
@@ -150,6 +151,12 @@ Each dock can be configured with a JSON file (e.g., `configs/applications.json`)
 - **falloff:** Number of items to be affected by hover animation
 - **scaleFactor:** Controls item's hover scaling animation strength
 - **damp:** Controls nearby items' hover scaling animation strength
+
+## Contribution
+
+If you have new ideas, concepts or implementations, consider contributing to this collection.
+
+There are no guidelines yet, so I would appreciate following the existing architecture with examples of existing widgets.
 
 ## Future Plans
 
