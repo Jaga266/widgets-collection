@@ -41,7 +41,6 @@ Scope {
       screen: modelData
 
       exclusionMode: ExclusionMode.Ignore   
-      aboveWindows: true                    
 
       function getAnchor(pos) { return Boolean(config.data.position == pos || config.data.margins?.[pos]) }
       anchors {
